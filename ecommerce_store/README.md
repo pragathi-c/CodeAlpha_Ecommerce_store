@@ -1,6 +1,6 @@
 # E-commerce Store
 
-A full-stack e-commerce web application built with Django, developed as part of the CodeAlpha Full Stack Development Internship.
+A full-stack e-commerce web application built with Django.
 
 ## Features
 - Product catalog organized by categories (Groceries, Clothing, Home Decor, Electronics, Footwear, Personal Care)
