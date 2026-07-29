@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Orders - MyMart</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; background: #f4f4f4; }
+        header { background: #d32f2f; color: white; padding: 20px; text-align: center; }
+        .container { max-width: 700px; margin: 30px auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .order { border-bottom: 1px solid #eee; padding: 15px 0; }
+        .item { margin-left: 15px; color: #555; }
+        .back-link { display: inline-block; margin-bottom: 15px; color: #d32f2f; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <header><h1>🛒 MyMart</h1></header>
+    <div class="container">
+        <a href="/" class="back-link">&larr; Continue shopping</a>
+        <h2>My Orders</h2>
+        {% if orders %}
+            {% for order in orders %}
+                <div class="order">
+                    <strong>Order #{{ order.id }}</strong> — {{ order.created_at|date:"d M Y, h:i A" }} — Total: ₹{{ order.total }}
+                    {% for item in order.items.all %}
+                        <p class="item">{{ item.quantity }} x {{ item.product.name }} — ₹{{ item.price }} each</p>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>You haven't placed any orders yet.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

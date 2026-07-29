@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ product.name }} - MyMart</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; background: #f4f4f4; }
+        header { background: #d32f2f; color: white; padding: 20px; text-align: center; }
+        .container { max-width: 600px; margin: 30px auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .price { color: #d32f2f; font-weight: bold; font-size: 24px; margin: 15px 0; }
+        .back-link { display: inline-block; margin-bottom: 15px; color: #d32f2f; text-decoration: none; }
+        button { background: #d32f2f; color: white; border: none; padding: 12px 24px; border-radius: 5px; font-size: 16px; cursor: pointer; }
+        button:hover { background: #b71c1c; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🛒 MyMart</h1>
+    </header>
+    <div class="container">
+        <a href="/" class="back-link">&larr; Back to store</a>
+        {% if product.image_url %}
+            <img src="{{ product.image_url }}" alt="{{ product.name }}" style="width:100%; border-radius:5px; margin-bottom:15px;">
+        {% endif %}
+        <h2>{{ product.name }}</h2>
+        <p>{{ product.description }}</p>
+        <p class="price">₹{{ product.price }}</p>
+        <p>In stock: {{ product.stock }}</p>
+        <a href="/cart/add/{{ product.id }}/"><button>Add to Cart</button></a>
+    </div>
+</body>
+</html>

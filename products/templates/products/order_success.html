@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order Confirmed - MyMart</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; background: #f4f4f4; }
+        header { background: #d32f2f; color: white; padding: 20px; text-align: center; }
+        .container { max-width: 500px; margin: 30px auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: center; }
+        .back-link { display: inline-block; margin-top: 15px; color: #d32f2f; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <header><h1>🛒 MyMart</h1></header>
+    <div class="container">
+        <h2>✅ Order Confirmed!</h2>
+        <p>Thank you, {{ order.user.username }}!</p>
+        <p>Order #{{ order.id }} — Total: ₹{{ order.total }}</p>
+        <a href="/" class="back-link">&larr; Continue shopping</a>
+    </div>
+</body>
+</html>
